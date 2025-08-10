@@ -62,6 +62,7 @@ ifeq ($(VERBOSE),YES)
     LINK = $(TOOL_CHAIN_PATH)csky-abiv2-elf-ld
     OBJCOPY = $(TOOL_CHAIN_PATH)csky-abiv2-elf-objcopy
     OBJDUMP = $(TOOL_CHAIN_PATH)csky-abiv2-elf-objdump
+    STRIP = $(TOOL_CHAIN_PATH)csky-abiv2-elf-strip
 else
     AR = @echo "AR $<" 2>/dev/null; $(TOOL_CHAIN_PATH)csky-abiv2-elf-ar
     ASM = @echo "ASM $<"; $(TOOL_CHAIN_PATH)csky-abiv2-elf-gcc
@@ -70,6 +71,7 @@ else
     LINK = @echo "LINK $<"; $(TOOL_CHAIN_PATH)csky-abiv2-elf-ld
     OBJCOPY = @echo "OBJCOPY $<"; $(TOOL_CHAIN_PATH)csky-abiv2-elf-objcopy
     OBJDUMP = @echo "OBJDUMP $<"; $(TOOL_CHAIN_PATH)csky-abiv2-elf-objdump
+    STRIP = @echo "OBJDUMP $<"; $(TOOL_CHAIN_PATH)csky-abiv2-elf-strip
 endif
 
 LDDIR = $(TOP_DIR)/ld/$(CONFIG_ARCH_TYPE)
