@@ -42,6 +42,7 @@ endef
 $(BINODIR)/%.bin: $(IMAGEODIR)/%.elf
 	@mkdir -p $(FIRMWAREDIR)
 	@mkdir -p $(FIRMWAREDIR)/$(TARGET)
+	$(STRIP) $<
 	$(OBJCOPY) -O binary $(IMAGEODIR)/$(TARGET).elf $(FIRMWAREDIR)/$(TARGET)/$(TARGET).bin
 
 ifeq ($(UNAME_S),Linux)
